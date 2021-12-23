@@ -84,8 +84,8 @@
 											<div class="u-text">
 												<h4><?=auth()->username?></h4>
 												<p class="text-muted"><?=auth()->roles[0]?></p>
-												<a href="index.php?r=default/profile" class="btn btn-xs btn-success btn-sm">Profil</a>
-												<a href="index.php?r=auth/logout" class="btn btn-xs btn-secondary btn-sm">Log Out</a>
+												<a href="http://is.stikes-assyifa.ac.id" class="btn btn-xs btn-success btn-sm">Kembali Ke SIAKAD</a>
+												<!-- <a href="index.php?r=auth/logout" class="btn btn-xs btn-secondary btn-sm">Log Out</a> -->
 											</div>
 										</div>
 									</li>
