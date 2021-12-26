@@ -3,10 +3,10 @@
 $conn = conn();
 $db   = new Database($conn);
 
-$db->delete('categories',[
+$db->delete('visitors',[
     'id' => $_GET['id']
 ]);
 
-set_flash_msg(['success'=>'Kategori berhasil dihapus']);
-header('location:index.php?r=categories/index');
+set_flash_msg(['success'=>'Pengunjung berhasil dihapus']);
+header('location:index.php?r=visitors/index');
 die();

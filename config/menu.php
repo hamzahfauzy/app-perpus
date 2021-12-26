@@ -8,6 +8,6 @@ return [
     ],
     'peminjaman' => 'book-takes/index',
     'pengunjung' => 'visitors/index',
-    'laporan'    => 'reports/index',
+    // 'laporan'    => 'reports/index',
     'roles'      => 'roles/index'
 ];

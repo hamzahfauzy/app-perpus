@@ -449,3 +449,25 @@ function count_total($items)
 
     return $total;
 }
+
+function count_visitors($date = false)
+{
+    if(!$date) $date = date('Y-m-d');
+    $query = "SELECT COUNT(*) as JUMLAH FROM visitors WHERE created_at LIKE '%$date%'";
+
+    $conn  = conn();
+    $db    = new Database($conn);
+    $db->query = $query;
+    return $db->exec('single')->JUMLAH;
+}
+
+function count_borrowers($date = false)
+{
+    if(!$date) $date = date('Y-m-d');
+    $query = "SELECT COUNT(*) as JUMLAH FROM book_takes WHERE taken_date LIKE '%$date%'";
+
+    $conn  = conn();
+    $db    = new Database($conn);
+    $db->query = $query;
+    return $db->exec('single')->JUMLAH;
+}

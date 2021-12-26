@@ -22,5 +22,6 @@ return [
     'menu' => [
         'menu' => $menu,
         'icon' => $icon_menu
-    ]
+    ],
+    'return_margin' => 2
 ];

@@ -4,11 +4,11 @@
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
-                        <h2 class="text-white pb-2 fw-bold">Buku</h2>
-                        <h5 class="text-white op-7 mb-2">Memanajemen data buku</h5>
+                        <h2 class="text-white pb-2 fw-bold">Peminjaman Buku</h2>
+                        <h5 class="text-white op-7 mb-2">Memanajemen data peminjaman Buku</h5>
                     </div>
                     <div class="ml-md-auto py-2 py-md-0">
-                        <a href="index.php?r=books/create" class="btn btn-secondary btn-round">Buat Buku</a>
+                        <a href="index.php?r=book-takes/create" class="btn btn-secondary btn-round">Buat Peminjaman</a>
                     </div>
                 </div>
             </div>
@@ -26,36 +26,34 @@
                                     <thead>
                                         <tr>
                                             <th width="20px">#</th>
-                                            <th>Kode</th>
+                                            <th>No. Identitas</th>
+                                            <th>Nama</th>
                                             <th>Buku</th>
-                                            <th>Kategori</th>
-                                            <th>Stok</th>
+                                            <th>Tanggal Kembali</th>
                                             <th class="text-right">
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php if(empty($datas)): ?>
-                                            <tr>
-                                                <td colspan="7" class="text-center"><i>Tidak ada data</i></td>
-                                            </tr>
+                                        <tr>
+                                            <td colspan="6"><i>Tidak ada Data</i></td>
+                                        </tr>
                                         <?php endif ?>
                                         <?php foreach($datas as $index => $data): ?>
                                         <tr>
                                             <td>
                                                 <?=$index+1?>
                                             </td>
-                                            <td><?=$data->barcode?></td>
-                                            <td>
-                                                <?=$data->title?><br>
-                                                <i><?=$data->author?> - <?=$data->publish_year?></i>
+                                            <td><?=$data->visitor_id?></td>
+                                            <td><?=$data->visitor_name?> (<?=$data->visitor_role?>)</td>
+                                            <td style="white-space:nowrap;">
+                                                <?=$data->book_title?><br>
+                                                <i><?=$data->taken_date?> <?=$data->return_date?'- '.$data->return_date:''?></i>
                                             </td>
-                                            <td><?=$data->category->name?></td>
-                                            <td><?=number_format($data->amount)?></td>
+                                            <td><?=$data->must_return_date?></td>
                                             <td>
-                                                <a href="index.php?r=books/view&id=<?=$data->id?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Lihat</a>
-                                                <a href="index.php?r=books/edit&id=<?=$data->id?>" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>
-                                                <a href="index.php?r=books/delete&id=<?=$data->id?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                <a href="index.php?r=book-takes/delete&id=<?=$data->id?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
                                         <?php endforeach ?>

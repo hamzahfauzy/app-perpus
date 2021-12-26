@@ -33,6 +33,8 @@ CREATE TABLE book_takes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     book_id INT NOT NULL,
     visitor_id VARCHAR(100) NOT NULL,
+    visitor_role VARCHAR(100) NOT NULL,
+    visitor_name VARCHAR(100) NOT NULL,
     taken_date DATE,
     return_date DATE NULL,
     must_return_date DATE,
