@@ -59,6 +59,7 @@
 	<script src="assets/js/setting-demo.js"></script>
 	<script src="assets/js/demo.js"></script>
 	<script>
+	$('.datatable').DataTable();
 	//Chart
 	var ctx = document.getElementById('statisticsChart').getContext('2d');
 

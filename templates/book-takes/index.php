@@ -22,7 +22,7 @@
                             <div class="alert alert-success"><?=$success_msg?></div>
                             <?php endif ?>
                             <div class="table-responsive table-hover table-sales">
-                                <table class="table">
+                                <table class="table datatable">
                                     <thead>
                                         <tr>
                                             <th width="20px">#</th>
@@ -53,7 +53,10 @@
                                             </td>
                                             <td><?=$data->must_return_date?></td>
                                             <td>
-                                                <a href="index.php?r=book-takes/delete&id=<?=$data->id?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                <?php if(!$data->return_date): ?>
+                                                <a href="index.php?r=book-takes/set-return&id=<?=$data->id?>" class="btn btn-block btn-sm btn-success"><i class="fas fa-exchange-alt"></i> Pengembalian</a>
+                                                <?php endif ?>
+                                                <a href="index.php?r=book-takes/delete&id=<?=$data->id?>" class="btn btn-block btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
                                         <?php endforeach ?>
