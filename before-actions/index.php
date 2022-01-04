@@ -28,7 +28,7 @@ if(startWith($route,'api'))
 // }
 
 $auth = auth();
-if(!isset($auth->username) || (isset($auth->username) && !is_allowed_roles($route, $auth->roles)))
+if(!isset($auth->username) || (isset($auth->username) && !is_allowed_roles($route, $auth->roles)) && !startWith($route,'api'))
 {
     echo "<h1>403 Unauthorized</h1>";
     die();
